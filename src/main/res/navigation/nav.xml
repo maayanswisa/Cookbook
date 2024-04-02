@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.foodbook.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_myMealsFragment"
+            app:destination="@id/myMealsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.foodbook.fragments.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" >
+        <action
+            android:id="@+id/action_favoritesFragment_to_mealActivity"
+            app:destination="@id/mealActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="com.example.foodbook.fragments.CategoriesFragment"
+        android:label="fragment_categories"
+        tools:layout="@layout/fragment_categories" >
+        <action
+            android:id="@+id/action_categoriesFragment_to_categoryMealsActivity"
+            app:destination="@id/categoryMealsActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.foodbook.fragments.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/myMealsFragment"
+        android:name="com.example.foodbook.fragments.MyMealsFragment"
+        android:label="fragment_my_meals"
+        tools:layout="@layout/fragment_my_meals" >
+        <action
+            android:id="@+id/action_myMealsFragment_to_addNewMealFragment"
+            app:destination="@id/addNewMealFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewMealFragment"
+        android:name="com.example.foodbook.fragments.AddNewMealFragment"
+        android:label="fragment_add_new_meal"
+        tools:layout="@layout/fragment_add_new_meal" >
+        <action
+            android:id="@+id/action_addNewMealFragment_to_myMealsFragment"
+            app:destination="@id/myMealsFragment"
+            app:popUpTo="@id/myMealsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <activity
+        android:id="@+id/mealActivity"
+        android:name="com.example.foodbook.activities.MealActivity"
+        android:label="activity_meal"
+        tools:layout="@layout/activity_meal" />
+    <activity
+        android:id="@+id/categoryMealsActivity"
+        android:name="com.example.foodbook.activities.CategoryMealsActivity"
+        android:label="activity_category_meals"
+        tools:layout="@layout/activity_category_meals" />
+</navigation>
